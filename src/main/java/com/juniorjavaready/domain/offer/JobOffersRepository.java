@@ -20,15 +20,15 @@ public class JobOffersRepository {
                 .toList();
     }
 
-    public JobOffers findJobOfferById(String id) throws JobNotFoundException {
+    public JobOffers findJobOfferById(int id) throws JobNotFoundException {
         return jobOffers.stream()
-                .filter(jobOffer -> jobOffer.id().equals(id))
+                .filter(jobOffer -> jobOffer.id() == id)
                 .findFirst()
                 .orElseThrow(() -> new JobNotFoundException("Oferta pracy o id " + id + " nie istnieje."));
     }
 
-    void fetchAllOffersAndSaveIfNotExists() {
-
+    List<JobOffers> fetchAllOffersAndSaveIfNotExists() {
+        return List.of();
     }
 
 }
