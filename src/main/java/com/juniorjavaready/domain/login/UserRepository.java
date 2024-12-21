@@ -5,10 +5,10 @@ import java.util.List;
 
 public class UserRepository {
     List<User> users = new ArrayList<User>();
-    public User saveUser(String login, String password) {
+    public User saveUser(User user) {
         return User.builder()
-                .login(login)
-                .password(password)
+                .login(user.login())
+                .password(user.password())
                 .build();
     }
 
