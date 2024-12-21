@@ -1,6 +1,7 @@
 package com.juniorjavaready.domain.offer;
 
 import java.util.List;
+import java.util.Optional;
 
 public class JobOffersFacade {
     private JobOffersRepository jobOffersRepository;
@@ -9,7 +10,7 @@ public class JobOffersFacade {
         return jobOffersRepository.fetchAllOffersAndSaveIfNotExists();
     }
 
-    public JobOffers findById(int id) throws JobNotFoundException {
+    public Optional<JobOffers> findById(int id) throws JobNotFoundException {
         return jobOffersRepository.findJobOfferById(id);
     }
 

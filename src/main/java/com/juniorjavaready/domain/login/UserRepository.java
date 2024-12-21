@@ -16,6 +16,6 @@ public class UserRepository {
         return users.stream()
                 .filter(user -> user.login().equals(username))
                 .findFirst()
-                .orElseThrow(() -> new UserNotFoundException(""));
+                .orElseThrow(() -> new UserNotFoundException("User not found"));
     }
 }

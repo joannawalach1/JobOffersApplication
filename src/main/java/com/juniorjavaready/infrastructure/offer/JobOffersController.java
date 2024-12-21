@@ -6,6 +6,7 @@ import com.juniorjavaready.domain.offer.JobOffersFacade;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/offers")
@@ -18,7 +19,7 @@ public class JobOffersController {
     }
 
     @GetMapping("/{id}")
-    public JobOffers getJobOfferById(@RequestParam int id) throws JobNotFoundException {
+    public Optional<JobOffers> getJobOfferById(@RequestParam int id) throws JobNotFoundException {
         return jobOffersFacade.findById(id);
     }
 
